@@ -3,8 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule } from '@angular/common/http'
+import {HttpClientModule } from '@angular/common/http';
+
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
+import { AdminModule } from './admin/admin.module';
+import { CoursesModule } from './courses/courses.module';
+import { StudentModule } from './student/student.module';
+import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +21,12 @@ import { StudentRegistrationComponent } from './student-registration/student-reg
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule,
+    CoursesModule,
+    StudentModule,
+    CoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
