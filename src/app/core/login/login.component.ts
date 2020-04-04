@@ -7,7 +7,9 @@ import { IStudentLogin } from 'src/app/student/istudent-login';
 
 @Component({ 
     selector: 'app-login',
-    templateUrl: 'login.component.html' })
+    templateUrl: 'login.component.html',
+    styleUrls: ['login.component.less']
+})
     
 export class LoginComponent implements OnInit {
 
@@ -30,6 +32,9 @@ export class LoginComponent implements OnInit {
         
     }
 
+    goToStudentRegistration(){
+      this.router.navigate(['register-student'])
+    }
 
     onSubmit() {
         this.submitted = true;

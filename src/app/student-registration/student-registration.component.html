@@ -1,81 +1,115 @@
-<p>student-registration works!</p>
 <div class="container-fluid">
-    <h2>Student Registration Form</h2>
-    <form [formGroup]="registrationForm">
+  <h2 style="text-align: center;">Student Registration Form</h2>
+  <form [formGroup]="registrationForm">
+
+    <h4>Basic Details</h4>
+    <div class="row">
+      <div class="col-md-6">
         <div class="form-group">
           <label>First Name</label>
           <input formControlName="studentName" type="text" class="form-control">
         </div>
-    
-        <!--<div class="form-group">
-          <label>Password</label>
-          <input formControlName="password" type="password" class="form-control">
-        </div>
-    
-        <div class="form-group">
-          <label>Confirm Password</label>
-          <input formControlName="confirmPassword" type="password" class="form-control">
-        </div>-->
-         
-        <div class="form-group">
-          <label>Father Name</label>
-          <input formControlName="fathername" type="text" class="form-control">
-        </div>
-        
+      </div>
+      <div class="col-md-6">
         <div class="form-group">
           <label>Last Name</label>
           <input formControlName="lastname" type="text" class="form-control">
         </div>
-        <div class="form-group">
-          <label>Mother Name</label>
-          <input formControlName="mothername" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Gender</label>
-          <input formControlName="gender" type="text" class="form-control">
-        </div>
+      </div>
+    </div>
+    <h4>Personal Details</h4>
+    <div class="row">
+      <div class="col-md-6">
         <div class="form-group">
           <label>Date of Birth</label>
           <input formControlName="dob" type="text" class="form-control">
         </div>
+      </div>
+      <div class="col-md-6">
         <div class="form-group">
-          <label>Aadharcard Number</label>
-          <input formControlName="aadharnumber" type="text" class="form-control">
+          <label>Gender</label>
+          <input formControlName="gender" type="text" class="form-control">
         </div>
-       
-        <div class="form-group">
-          <label>Govt Id Type</label>
-          <input formControlName="govtIdType" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Govt Id Number</label>
-          <input formControlName="govtIdNum" type="text" class="form-control">
-        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <div class="form-group">
           <label>Mobile Number</label>
           <input formControlName="mobNum" type="text" class="form-control">
         </div>
+      </div>
+      <div class="col-md-6">
         <div class="form-group">
           <label>Email</label>
           <input formControlName="email" type="text" class="form-control">
         </div>
+      </div>
+    </div>
+
+    <h4>ID Proof</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Aadharcard Number</label>
+          <input formControlName="aadharnumber" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Govt Id Type</label>
+          <input formControlName="govtIdType" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Govt Id Number</label>
+          <input formControlName="govtIdNum" type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <h4>Other Details</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Father Name</label>
+          <input formControlName="fathername" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
         <div class="form-group">
           <label>Father Occupation </label>
           <input formControlName="fathOccu" type="text" class="form-control">
         </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Mother Name</label>
+          <input formControlName="mothername" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
         <div class="form-group">
           <label>Mother Occupation</label>
           <input formControlName="mothOccu" type="text" class="form-control">
         </div>
-        <div class="form-group">
-          <label>Course To Join</label>
-          <input formControlName="courseToJoin" type="text" class="form-control">
-        </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary button-submit" type="button" (click)="registerStudent()">Register</button>
+      </div>
+    </div>
 
+  </form>
 
-        <button class="btn btn-primary" type="button" (click)="registerStudent()">Register</button>
-    </form>
+  <div class="jsonreq">
     {{registrationForm.value | json}}
   </div>
 
+</div>
