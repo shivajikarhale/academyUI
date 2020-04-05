@@ -1,1 +1,62 @@
-<p>studentprofile works!</p>
+<div class="container-fluid student-profile-container">
+
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="example-h2">Recent Courses</h2>
+      <ng-container *ngFor="let course of recentCourses">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{course['name'] | uppercase }}</mat-card-title>
+            <mat-card-subtitle>By {{course['faculty']}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{course['description']}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+
+    <div class="col-md-4">
+      <h2 class="example-h2">Test Results</h2>
+      <ng-container *ngFor="let result of recentResults">
+        <mat-card class="example-card">
+          <mat-card-content>
+            <section class="example-section">
+              {{result['name']}} <mat-progress-bar class="example-margin" [color]="color" [mode]="mode"
+                [value]="result['value']">
+              </mat-progress-bar>
+              &nbsp;{{result['value']}}/{{result['total']}}
+            </section>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+
+    <div class="col-md-4">
+      <h2 class="example-h2">Courses you may Like</h2>
+      <ng-container *ngFor="let suggestion of coursesSuggestion">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{suggestion['name'] | uppercase }}</mat-card-title>
+            <mat-card-subtitle>By {{suggestion['faculty']}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{suggestion['description']}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
+
+  </div>
+
+</div>

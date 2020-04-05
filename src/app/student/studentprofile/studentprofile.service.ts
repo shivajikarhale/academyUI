@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IStudentLogin } from './istudent-login';
+import { IStudentLogin } from '../../core/login/istudent-login';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

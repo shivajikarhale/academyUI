@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainmenuComponent } from './mainmenu/mainmenu.component';
 import { RouterModule } from '@angular/router';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatMenuModule } from  '@angular/material';
+import { AngularMaterialModule } from '../angular-material.module';
 
 
 
@@ -14,12 +14,7 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
+    AngularMaterialModule,
     RouterModule
   ],
   exports: [

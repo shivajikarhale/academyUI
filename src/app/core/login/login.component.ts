@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { first } from 'rxjs/operators';
-import { StudentprofileService } from 'src/app/student/studentprofile.service';
-import { IStudentLogin } from 'src/app/student/istudent-login';
+import { StudentprofileService } from 'src/app/student/studentprofile/studentprofile.service';
+import { IStudentLogin } from 'src/app/core/login/istudent-login';
 
 @Component({ 
     selector: 'app-login',
