@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatMenuModule, MatProgressBarModule, MatCardModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatMenuModule, MatProgressBarModule, MatCardModule } from '@angular/material';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 @NgModule({
-  imports: [
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatProgressBarModule
+  providers: [
+    {provide: MatDialogRef, useValue: {}}
   ],
   exports: [
     MatToolbarModule,
@@ -19,7 +14,8 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
     MatIconModule,
     MatMenuModule,
     MatProgressBarModule,
-    MatCardModule
-  ]
+    MatCardModule,
+    MatDialogModule
+  ],
 })
 export class AngularMaterialModule { }

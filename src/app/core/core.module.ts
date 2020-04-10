@@ -17,6 +17,9 @@ import { AngularMaterialModule } from '../angular-material.module';
     AngularMaterialModule,
     RouterModule
   ],
+  entryComponents: [
+    LoginComponent
+  ],
   exports: [
     HomepageComponent,
     MainmenuComponent

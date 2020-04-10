@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 import { StudentprofileService } from 'src/app/student/studentprofile/studentprofile.service';
 import { IStudentLogin } from 'src/app/core/login/istudent-login';
 import { LoginService } from './login-service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private _service: StudentprofileService,
-    private _loginService: LoginService) {
+    private _loginService: LoginService,
+    public dialogRef: MatDialogRef<LoginComponent>) {
 
   }
 
@@ -37,7 +39,7 @@ export class LoginComponent implements OnInit {
   }
 
   goToStudentRegistration() {
-    this.router.navigate(['register-student'])
+    this.router.navigate(['register-student']);
   }
 
   onSubmit() {
@@ -52,6 +54,12 @@ export class LoginComponent implements OnInit {
       (profileInfo) => {
         this._loginService.loginNameObserve.emit(profileInfo.loginName);
         this._loginService.isLoginObserve.emit(true);
+        console.log(this.dialogRef);
+        try {
+          this.dialogRef.close();
+        } catch (error) {
+          
+        }
         this._service.getStudentProfile(studLogin).subscribe(
           (data) => { },
           (err) => console.log(err)
