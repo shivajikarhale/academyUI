@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login/login-service';
 
 
 @Component({
@@ -8,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainmenuComponent implements OnInit {
 
-  constructor() { }
+  isLogin: boolean = false;
+  loginName: string = "";
+
+  constructor(
+    private _loginService: LoginService
+  ) {}
 
   ngOnInit() {
+    this._loginService.isLoginObserve.subscribe(
+      (isLogin: boolean) => this.isLogin = isLogin
+    )
+    this._loginService.loginNameObserve.subscribe(
+      (username: string) => this.loginName = username
+    )
   }
 
 }

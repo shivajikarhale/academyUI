@@ -1,32 +1,44 @@
-<div class="toolbar" role="banner">
-    <img
-      width="40"
-      alt="Angular Logo"
-      src="favicon.ico"
-      [routerLink]="'homepage'"
-      style="cursor: pointer;"
-    />
-    <span style="font-size: 20px;">SK Academey</span>
-    <div class="spacer"></div>
-     
-</div>
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span class="menu-spacer"></span>
-    <div>
-      <button mat-button [routerLink]="'homepage'">Home</button>
-      <button mat-button [matMenuTriggerFor]="aboutus">About Us</button>
-      <button mat-button [matMenuTriggerFor]="courses">Our Courses</button>
-      <a mat-button [routerLink]="'/create-account'">Exam Information</a>
-      <a mat-button [routerLink]="'/contacts'"> Study Materials </a>
-      <a mat-button [routerLink]="'/create-contact'"> Acheivments </a>
-      <a mat-button [routerLink]="'/activities'"> Contact Us </a>
-     
+    <img alt="Angular Logo" src="favicon.ico" [routerLink]="'homepage'" class="toolbar-logo" />
+    <span>&nbsp;SK ACADEMY</span>
 
-    </div>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <span *ngIf="isLogin; else logInTemplate">
+      <button mat-raised-button color= "primary" [matMenuTriggerFor]="profilemenu">
+          <mat-icon>face</mat-icon>
+          &nbsp;{{loginName | uppercase}}
+          &nbsp;<mat-icon>arrow_drop_down</mat-icon>
+      </button>
+    </span>
+    <ng-template #logInTemplate>
+        <button mat-raised-button color= "primary" [routerLink]="'login'">LOGIN</button>
+    </ng-template>
   </mat-toolbar-row>
+
+  <!-- <mat-toolbar-row>
+    <span class="menu-spacer"></span>
+  </mat-toolbar-row> -->
+
 </mat-toolbar>
 
+<mat-menu #profilemenu="matMenu">
+  <button mat-menu-item [routerLink]="'studprofile'">Home</button>
+  <button mat-menu-item>Settings</button>
+  <button mat-menu-item>Change Password</button>
+</mat-menu>
+
+<div class="container-menu">
+    <button mat-button [routerLink]="'homepage'">Home</button>
+    <button mat-button [matMenuTriggerFor]="aboutus">About Us</button>
+    <button mat-button [matMenuTriggerFor]="courses">Our Courses</button>
+    <a mat-button [routerLink]="'/create-account'">Exam Information</a>
+    <a mat-button [routerLink]="'/contacts'"> Study Materials </a>
+    <a mat-button [routerLink]="'/create-contact'"> Acheivments </a>
+    <a mat-button [routerLink]="'/activities'"> Contact Us </a>
+</div>
 
 <mat-menu #aboutus="matMenu">
   <button mat-menu-item [matMenuTriggerFor]="prelims"> Institute</button>
@@ -74,5 +86,3 @@
   <button mat-menu-item>Blue Spiny Lizard</button>
   <button mat-menu-item disabled>Velociraptor</button>
 </mat-menu>
-
-

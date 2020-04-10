@@ -19,13 +19,14 @@
         </div>
     </div>
     <div class="form-group">
-        <a class="card" target="_blank" rel="noopener" (click)="goToStudentHome()">
+        <a class="card" target="_blank" rel="noopener">
             <button [disabled]="loading" class="btn btn-primary">
                 <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                 Login
             </button>
         </a>
     </div>
+
     <div class="registration">
         <span>Not Registered Yet? </span>
         <a class="card" target="_blank" rel="noopener" (click)="goToStudentRegistration()">
