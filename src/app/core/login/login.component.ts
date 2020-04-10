@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
   }
 
   goToStudentRegistration() {
+    this.closeDialog();
     this.router.navigate(['register-student']);
   }
 
@@ -55,11 +56,7 @@ export class LoginComponent implements OnInit {
         this._loginService.loginNameObserve.emit(profileInfo.loginName);
         this._loginService.isLoginObserve.emit(true);
         console.log(this.dialogRef);
-        try {
-          this.dialogRef.close();
-        } catch (error) {
-          
-        }
+        this.closeDialog();
         this._service.getStudentProfile(studLogin).subscribe(
           (data) => { },
           (err) => console.log(err)
@@ -77,6 +74,14 @@ export class LoginComponent implements OnInit {
         this.loginForm.get('password').setErrors({ 'invalidLoginCredentials': true });
       }
     );
+  }
+
+  closeDialog() {
+    try {
+      this.dialogRef.close();
+    } catch (error) {
+      
+    }
   }
 }
 
